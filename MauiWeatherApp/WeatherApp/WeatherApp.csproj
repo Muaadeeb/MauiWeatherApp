@@ -49,6 +49,30 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\humidity.png" />
+	  <None Remove="Resources\Images\icon_01d.png" />
+	  <None Remove="Resources\Images\icon_01n.png" />
+	  <None Remove="Resources\Images\icon_02d.png" />
+	  <None Remove="Resources\Images\icon_02n.png" />
+	  <None Remove="Resources\Images\icon_03d.png" />
+	  <None Remove="Resources\Images\icon_03n.png" />
+	  <None Remove="Resources\Images\icon_04d.png" />
+	  <None Remove="Resources\Images\icon_04n.png" />
+	  <None Remove="Resources\Images\icon_09d.png" />
+	  <None Remove="Resources\Images\icon_09n.png" />
+	  <None Remove="Resources\Images\icon_10d.png" />
+	  <None Remove="Resources\Images\icon_10n.png" />
+	  <None Remove="Resources\Images\icon_11d.png" />
+	  <None Remove="Resources\Images\icon_11n.png" />
+	  <None Remove="Resources\Images\icon_13d.png" />
+	  <None Remove="Resources\Images\icon_13n.png" />
+	  <None Remove="Resources\Images\icon_50d.png" />
+	  <None Remove="Resources\Images\icon_50n.png" />
+	  <None Remove="Resources\Images\searchweather.png" />
+	  <None Remove="Resources\Images\wind.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
 
