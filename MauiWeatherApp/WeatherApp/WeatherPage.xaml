@@ -23,5 +23,34 @@
             <Image Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" HeightRequest="25" Source="wind.png"></Image>
             <Label x:Name="lblWind" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" Text="88"></Label>
         </Grid>
+
+        <CollectionView Grid.Row="4" x:Name="CvWeather" HeightRequest="100">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="20" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <!--Weather image, Temperature, Date/Time-->
+                    <Grid Grid.Row="4"
+                          RowDefinitions="Auto,Auto,Auto">
+
+                        <Image Grid.Row="0"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Start"
+                               HeightRequest="50"
+                               WidthRequest="50" />
+                        <Label Grid.Row="1"
+                               FontSize="Large"
+                               HorizontalOptions="Center" />
+                        <Label Grid.Row="2"
+                               FontSize="Small"
+                               HorizontalOptions="Center" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+
     </Grid>
 </ContentPage>
