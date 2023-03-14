@@ -81,6 +81,8 @@ public class Main
     [JsonPropertyName("temp")]
     public double Temp { get; set; }
 
+    public double Temperature => Math.Round(Temp);
+
     [JsonPropertyName("feels_like")]
     public double FeelsLike { get; set; }
 

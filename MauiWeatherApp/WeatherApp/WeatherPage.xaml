@@ -18,10 +18,10 @@
         <Image Grid.Row="2" x:Name="ImgWeatherIcon" VerticalOptions="Start" HeightRequest="300" WidthRequest="300" Source="icon_01n.png"></Image>
         <Grid Grid.Row="3" RowDefinitions="Auto,Auto" ColumnDefinitions="0.33*, 0.33*, 0.33*" Margin="20">
             <Image Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" HeightRequest="25" Source="humidity.png"></Image>
-            <Label x:Name="lblHumidity" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" Text="88"></Label>
-            <Label x:Name="lblTemperature" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" HorizontalOptions="Center" FontSize="40" FontAttributes="Bold" Text="25"></Label>
+            <Label x:Name="lblHumidity" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center"></Label>
+            <Label x:Name="lblTemperature" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" HorizontalOptions="Center" FontSize="40" FontAttributes="Bold"></Label>
             <Image Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" HeightRequest="25" Source="wind.png"></Image>
-            <Label x:Name="lblWind" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" Text="88"></Label>
+            <Label x:Name="lblWind" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center"></Label>
         </Grid>
 
         <CollectionView Grid.Row="4" x:Name="CvWeather" HeightRequest="100">
