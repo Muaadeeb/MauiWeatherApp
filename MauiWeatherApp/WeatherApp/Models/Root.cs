@@ -67,7 +67,7 @@ public class List
     public int Visibility { get; set; }
 
     [JsonPropertyName("pop")]
-    public int Pop { get; set; }
+    public double Pop { get; set; }
 
     [JsonPropertyName("sys")]
     public Sys Sys { get; set; }

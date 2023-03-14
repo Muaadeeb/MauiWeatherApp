@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace WeatherApp.Services
         public const string BaseUrl = "https://api.openweathermap.org/data/2.5/";
         public const string AppId = "a8e17e406cdbc8dad3a13d1f29d1fc6e";
 
-        public async Task<Root> GetWeather(double latitude, double longitude)
+        public static async Task<Root> GetWeather(double latitude, double longitude)
         {
             try
             {
@@ -51,19 +52,36 @@ namespace WeatherApp.Services
 
         public static async Task<Root> ProcessResponseAsync(HttpResponseMessage response)
         {
-            if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.NoContent)
+            try
             {
-                throw new Exception("No Data today");
+                if (response.IsSuccessStatusCode && response.StatusCode == HttpStatusCode.NoContent)
+                {
+                    throw new Exception("No Data today");
+                }
+
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+
+
+                var options = new JsonSerializerOptions()
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                };
+
+                return JsonSerializer.Deserialize<Root>(responseContent, options) ?? new Root();
             }
-
-            var responseContent = await response.Content.ReadAsStringAsync();
-            var options = new JsonSerializerOptions()
+            catch (Exception ex)
             {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-            };
+                var message1 = ex.ToString();
+                var msg3 = ex.Message;
+                var msg4 = ex.StackTrace;
+                var msg5 = ex.Message;
+                var message2 = ex.Source.ToString();
 
-            return JsonSerializer.Deserialize<Root>(responseContent, options) ?? new Root();
+
+
+                throw new Exception(ex.ToString());
+            }
         }
-
     }
 }
