@@ -38,13 +38,17 @@
                                HorizontalOptions="Center"
                                VerticalOptions="Start"
                                HeightRequest="50"
-                               WidthRequest="50" />
+                               WidthRequest="50"
+                               Source="{Binding Weather[0].CustomIcon}"/>
                         <Label Grid.Row="1"
                                FontSize="Large"
-                               HorizontalOptions="Center" />
+                               HorizontalOptions="Center"
+                               Text="{Binding Main[0].Temperature}"/>
                         <Label Grid.Row="2"
                                FontSize="Small"
-                               HorizontalOptions="Center" />
+                               HorizontalOptions="Center"
+                               Text="{Binding UTCDateTime}"
+                               />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
