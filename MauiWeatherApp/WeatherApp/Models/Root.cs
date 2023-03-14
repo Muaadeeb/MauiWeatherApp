@@ -145,6 +145,10 @@ public class Weather
 
     [JsonPropertyName("icon")]
     public string Icon { get; set; }
+
+    public string FullIconUrl => $"https://openweathermap.org/img/wn/{Icon}@2x.png";
+    public string CustomIcon => $"icon_{Icon}.png";
+
 }
 
 public class Wind

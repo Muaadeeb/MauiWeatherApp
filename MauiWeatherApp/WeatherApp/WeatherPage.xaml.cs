@@ -19,6 +19,8 @@ public partial class WeatherPage : ContentPage
         lblTemperature.Text = $"{result.List[0].Main.Temperature}{GlobalConstants.TemperatureFahrenheit}";
         lblHumidity.Text = $"{result.List[0].Main.Humidity}%";
         lblWind.Text = $"{result.List[0].Wind.Speed}mph";
+        //ImgWeatherIcon.Source = result.List[0].Weather[0].Icon;
+        ImgWeatherIcon.Source = result.List[0].Weather[0].CustomIcon;
 
     }
 
