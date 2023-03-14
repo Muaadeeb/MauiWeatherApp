@@ -8,6 +8,9 @@
         <StackLayout Grid.Row="0" Margin="20,20,20,20" Orientation="Horizontal">
             <Frame Padding="10" CornerRadius="35" HasShadow="True" BorderColor="LightGray">
                 <Label Text="Your Location" FontSize="Default"></Label>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="TapLocation" Tapped="TapLocation_Tapped"></TapGestureRecognizer>
+                </Frame.GestureRecognizers>
             </Frame>
             <ImageButton Source="searchweather.png" HeightRequest="30" HorizontalOptions="EndAndExpand"></ImageButton>
         </StackLayout>
