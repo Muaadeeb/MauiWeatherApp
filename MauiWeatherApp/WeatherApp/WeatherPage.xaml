@@ -12,7 +12,10 @@
                     <TapGestureRecognizer x:Name="TapLocation" Tapped="TapLocation_Tapped"></TapGestureRecognizer>
                 </Frame.GestureRecognizers>
             </Frame>
-            <ImageButton Source="searchweather.png" HeightRequest="30" HorizontalOptions="EndAndExpand"></ImageButton>
+            <ImageButton Source="searchweather.png" HeightRequest="30" HorizontalOptions="EndAndExpand" Clicked="ImageButton_Clicked"
+                         
+                         
+                         ></ImageButton>
         </StackLayout>
         <StackLayout Grid.Row="1" Orientation="Vertical">
             <Label x:Name="lblCity" FontSize="40" HorizontalOptions="Center" TextColor="Gray"></Label>

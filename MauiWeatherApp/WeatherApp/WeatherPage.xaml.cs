@@ -9,6 +9,7 @@ public partial class WeatherPage : ContentPage
     public double Latitude { get; set; }
     public double Longitude { get; set; }
 
+    //TODO: Get by location works great.  Get by city returns different model/data.  Will need custom model maybe.
 
 	public WeatherPage()
 	{
@@ -38,7 +39,30 @@ public partial class WeatherPage : ContentPage
     public async Task GetWeatherDataByLocation(double latitude, double longitude)
     {
         var result = await ApiService.GetWeather(Latitude, Longitude);
+        UpdateUI(result);
+    }
 
+    private async void ImageButton_Clicked(object sender, EventArgs e)
+    {
+        var city = await DisplayPromptAsync(title: "", message: "", placeholder: "Search weather by city", accept: "Search",
+            cancel: "Cancel");
+
+        if (city is not null)
+        {
+            await GetWeatherDataByCity(city);
+        }
+    }
+
+
+    public async Task GetWeatherDataByCity(string city)
+    {
+        var result = await ApiService.GetWeatherByCity(city);
+        UpdateUI(result);
+    }
+
+
+    public void UpdateUI(dynamic result)
+    {
         foreach (var item in result.List)
         {
             WeatherList.Add(item);

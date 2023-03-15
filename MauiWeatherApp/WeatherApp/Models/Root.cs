@@ -3,6 +3,7 @@
 // Use Pascale Case // Use JsonPropertyName (.Net Core)
 
 using System.Globalization;
+using WeatherApp.Common.Helpers;
 
 namespace WeatherApp.Models;
 
@@ -114,7 +115,11 @@ public class Main
 
 public class Root
 {
+    // We need different models.  Sometimes COD is int and sometimes it is string. 
     [JsonPropertyName("cod")]
+    //[JsonConverter(typeof(ConverterIntOrString))]
+    //[JsonIgnore]
+    //public string Cod { get; set; } = "200";
     public string Cod { get; set; }
 
     [JsonPropertyName("message")]
